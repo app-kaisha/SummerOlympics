@@ -61,16 +61,18 @@ struct ContentView: View {
             
             HStack {
                 Button {
-                    
+                    logoNumber -= 1
                 } label: {
                     Image(systemName: "chevron.left.to.line")
                 }
+                .disabled(logoNumber <= 0)
                 Spacer()
                 Button {
-                    
+                    logoNumber += 1
                 } label: {
                     Image(systemName: "chevron.right.to.line")
                 }
+                .disabled(logoNumber >= logos.endIndex - 1)
 
             }
             .font(.largeTitle)
